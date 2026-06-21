@@ -1,0 +1,4 @@
+.claude/
+*.png
+assets/*.png
+.omc/
