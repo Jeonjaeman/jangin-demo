@@ -106,9 +106,13 @@ body{overflow-x:hidden}
 .pin-anim{opacity:0;transform:translateY(-25px) scale(.8);transition:all .4s cubic-bezier(.34,1.56,.64,1)}
 .pin-anim.visible{opacity:1;transform:translateY(0) scale(1)}
 
+/* Hero fade-in (CSS animation, no JS needed) */
+.hero-fade{opacity:0;transform:translateY(30px);animation:heroFadeIn .8s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes heroFadeIn{to{opacity:1;transform:translateY(0)}}
+
 /* Reduced motion */
 @media(prefers-reduced-motion:reduce){
-  .reveal,.pin-anim{opacity:1;transform:none;transition:none}
+  .reveal,.pin-anim,.hero-fade{opacity:1;transform:none;transition:none;animation:none}
   .exc-arm,.exc-bucket{animation:none}
   .dust{animation:none;display:none}
   .phone-pulse{animation:none}
@@ -192,17 +196,17 @@ body{overflow-x:hidden}
 
   <div class="max-w-6xl mx-auto px-5 py-16 relative z-10">
     <div class="max-w-2xl">
-      <p class="font-mono text-safety text-xs tracking-[.25em] uppercase mb-5 reveal" style="transition-delay:.05s">GYEONGBUK EXCAVATOR · SINCE 2005</p>
-      <h1 class="text-[clamp(2.2rem,7vw,4rem)] font-extrabold text-paper leading-[1.1] mb-5 reveal" style="transition-delay:.15s">
+      <p class="font-mono text-safety text-xs tracking-[.25em] uppercase mb-5 hero-fade" style="animation-delay:.1s">GYEONGBUK EXCAVATOR · SINCE 2005</p>
+      <h1 class="text-[clamp(2.2rem,7vw,4rem)] font-extrabold text-paper leading-[1.1] mb-5 hero-fade" style="animation-delay:.3s">
         경북 전지역<br>
         <span class="text-gradient">포크레인·굴삭기</span><br>
         20년 가족기업
       </h1>
-      <p class="text-lg md:text-xl text-stone-400 mb-8 leading-relaxed reveal" style="transition-delay:.25s">
+      <p class="text-lg md:text-xl text-stone-400 mb-8 leading-relaxed hero-fade" style="animation-delay:.5s">
         터파기·성토·정지·상하수도·조경·철거<br>
         <strong class="text-stone-300">전화 한 통이면 당일 출동합니다.</strong>
       </p>
-      <div class="flex flex-wrap gap-3 reveal" style="transition-delay:.35s">
+      <div class="flex flex-wrap gap-3 hero-fade" style="animation-delay:.7s">
         <a href="tel:010-6472-3953" class="bg-safety text-ink font-extrabold text-lg px-8 py-4 rounded-2xl flex items-center gap-3 hover:bg-safety-deep transition shadow-xl shadow-safety/25 phone-pulse">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           010-6472-3953
@@ -212,7 +216,7 @@ body{overflow-x:hidden}
         </a>
       </div>
       <!-- Quick trust badges -->
-      <div class="flex flex-wrap gap-3 mt-8 reveal" style="transition-delay:.45s">
+      <div class="flex flex-wrap gap-3 mt-8 hero-fade" style="animation-delay:.9s">
         <span class="text-xs font-mono text-stone-500 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">대표 성기영 직접 운전</span>
         <span class="text-xs font-mono text-stone-500 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">미니~중형 장비 보유</span>
         <span class="text-xs font-mono text-stone-500 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">시간제 작업 OK</span>
